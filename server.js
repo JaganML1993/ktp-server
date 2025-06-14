@@ -5,9 +5,13 @@ require("dotenv").config();
 const adminRoute = require("./app/routes/admin.routes");
 const weatherRoute = require("./app/routes/weather.routes");
 var cors = require("cors");
+const path = require("path");
 
 const app = express();
 app.use(cors()); // Use this after the variable declaration
+
+// Add this static files middleware before your routes
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Access environment variables
 const MONGODB_URL = process.env.MONGODB_URL; // Make sure to declare this
