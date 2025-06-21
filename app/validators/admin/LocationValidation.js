@@ -20,6 +20,8 @@ const LocationValidation = [
   body("whatToPack").optional().trim().escape(),
   body("photogenicForecastContent").optional().trim().escape(),
   body("bestTimeToVisit").optional().trim().escape(),
+  body("photogenicForecastLink").optional().trim().escape(),
+  body("additionalField").optional().trim().escape(),
 ];
 
 module.exports = LocationValidation;

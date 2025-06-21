@@ -20,6 +20,8 @@ exports.save = async (req, res) => {
       whatToPack,
       photogenicForecastContent,
       bestTimeToVisit,
+      photogenicForecastLink,
+      additionalField,
     } = req.body;
 
     // 🔍 Check for duplicate location
@@ -44,6 +46,8 @@ exports.save = async (req, res) => {
       whatToPack,
       photogenicForecastContent,
       bestTimeToVisit,
+      photogenicForecastLink,
+      additionalField,
       photogenicForecastImages,
       createdAt: new Date(),
     });
@@ -87,6 +91,8 @@ exports.update = async (req, res) => {
       whatToPack,
       photogenicForecastContent,
       bestTimeToVisit,
+      photogenicForecastLink,
+      additionalField,
     } = req.body;
 
     const location = await Location.findById(locationId);
@@ -120,6 +126,9 @@ exports.update = async (req, res) => {
     location.photogenicForecastContent =
       photogenicForecastContent || location.photogenicForecastContent;
     location.bestTimeToVisit = bestTimeToVisit || location.bestTimeToVisit;
+    location.photogenicForecastLink =
+      photogenicForecastLink || location.photogenicForecastLink;
+    location.additionalField = additionalField || location.additionalField;
 
     // Replace images if new ones are uploaded
     if (req.files?.length) {
