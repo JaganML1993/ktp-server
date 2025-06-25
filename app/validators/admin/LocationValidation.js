@@ -22,6 +22,7 @@ const LocationValidation = [
   body("bestTimeToVisit").optional().trim().escape(),
   body("photogenicForecastLink").optional().trim().escape(),
   body("additionalField").optional().trim().escape(),
+  body("dangerAlert").optional().trim().escape(),
 ];
 
 module.exports = LocationValidation;

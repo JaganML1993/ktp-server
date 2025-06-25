@@ -11,6 +11,7 @@ const LocationSchema = new mongoose.Schema(
     bestTimeToVisit: { type: String },
     photogenicForecastLink: { type: String },
     photogenicForecastImages: [{ type: String }],
+    dangerAlert: { type: String },
   },
   {
     timestamps: true,
